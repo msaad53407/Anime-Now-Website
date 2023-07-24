@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/Screenshot-_48_.png" type="image/png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Anime Now - Check Your Favorite Anime Now</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="bg-red-500 bg-opacity-90 text-gray-600 body-font" style="position: sticky;">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+                <a class="mr-5 text-gray-50 hover:text-gray-900 text-lg" href="/topanimes">Top Anime</a>
+                <a class="mr-5 text-gray-50 hover:text-gray-900 text-lg" href="/topmangas">Top Manga</a>
+            </nav>
+            <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0"
+                href="/">
+                <span class="ml-3 text-gray-50 text-4xl" style="font-family: 'Courgette',cursive;">Anime Now</span>
+            </a>
+            <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+                <input type="text" placeholder="Search Anime , Manga..."
+                    class="px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-red-800 focus:border-red-800"
+                    required id="searchInput">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1.3em" viewBox="0 0 512 512"
+                    class="my-3 mx-3 cursor-pointer" id="searchIcon">
+                    <path
+                        d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+
+    <main>
+        <section class="text-gray-600 body-font bg-cover bg-no-repeat"
+            style="background-image: url(https://64.media.tumblr.com/762cec1d0491401bc69a1eca00a9218b/111f1cfd28f44ff0-f7/s1280x1920/0e0cc2d0ce40f6e9f37c610f898bacd4bd631ff0.png); height: 95vh;">
+            <div class=" container mx-auto flex px-5 py-24 items-center justify-center text-center flex-col ">
+                <div id="warning"
+                    class="bg-red-700 text-gray-900 w-80 pt-4 h-20 text-2xl text-red-50 rounded-xl text-center hidden overflow-x-hidden">
+                    Minimum 3 Letters Required</div>
+                <div class="bg-gray-50 text-center lg:w-2/3 w-full h-3/4 md:pt-14 pt-10 pb-14 mt-40 rounded-2xl">
+                    <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900"
+                        style="font-family: 'Courgette',cursive;">Welcome To Anime Now</h1>
+                    <p class="mb-8 leading-relaxed text-xl">Whether You want to Know About any Anime or Manga's Synopsis
+                        or
+                        Statistics <br>You are at the Right Place <br>Search for your Favorite Anime or Manga or Click
+                        Top Anime or Top Manga to Get Started </p>
+                    <div class="flex justify-center"><a href="/search"><button
+                                class="inline-flex text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg"
+                                id="lastSearch">Last
+                                Search</button></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class=" bg-red-500 bg-opacity-90 text-gray-600 body-font">
+        <div
+            class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+            <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+                <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900"
+                    href="/">
+                    <span class="ml-1 text-2xl text-teal-50" style="font-family: 'Courgette' , cursive;">Anime
+                        Now</span>
+                </a>
+                <p class="mt-2 text-sm text-gray-500 text-teal-50">Check your Favorite Anime Now</p>
+            </div>
+            <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <h2 class="title-font font-medium text-gray-900 tracking-widest text-xl mb-3 text-teal-50">Quick
+                        Links</h2>
+                    <nav class="list-none mb-10">
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 text-teal-50" href="/topanimes">Top Anime</a>
+                        </li>
+                        <li>
+                            <a class="text-gray-600 hover:text-gray-800 text-teal-50" href="/topmangas">Top Manga</a>
+                        </li>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="bg-red-500 bg-opacity-5 text-gray-50">
+            <div class=" text-teal-50 container mx-auto py-4 px-5 flex flex-wrap flex-row sm:flex-row">
+                <p class="text-gray-50 text-sm text-center sm:text-left">© 2023 Anime Now —
+                </p>
+                <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                    <a class="text-gray-50" href="https://facebook.com" target="_blank">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-50">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5" viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-50">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-gray-50">
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path stroke="none"
+                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                            </path>
+                            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                        </svg>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </footer>
+    <script type="module" src="/public/home/index.mjs"></script>
+</body>
+
+</html>

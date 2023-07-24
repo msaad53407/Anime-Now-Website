@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/Screenshot-_48_.png" type="image/png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+        #hr {
+            border: none;
+        }
+
+        @media only screen and (min-width: 768px) {
+            #hr {
+                border-left: 1px solid black;
+                height: 100vh;
+                margin: 0 20px;
+            }
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>{{data.title_ov}}</title>
+</head>
+
+<body>
+    {{>header}}
+    <div id="warning"
+        class="bg-red-700 text-gray-900 w-80 pt-4 h-20 text-2xl text-red-50 rounded-xl text-center hidden overflow-x-hidden">
+        Minimum 3 Letters Required</div>
+    <div class="title text-center mb-4 text-xl">
+        <span class="block font-medium">{{data.title_ov}}</span>
+        <span class="block font-medium">{{data.title_en}}</span>
+    </div>
+    <div class="flex flex-col md:flex-row">
+        <div class="left md:w-1/4 text-base">
+            <div class="coverImage flex justify-center align-items-center">
+                <img src="{{data.picture_url}}" alt="{{data.title_en}}">
+            </div>
+            <div class="alternativeTitles mt-4 text-center">
+                <h2 class="text-3xl" style="font-family: 'Courgette' , cursive;">Alternative Titles</h2>
+                <hr class="my-2 border-t border-slate-950">
+                <span class="block font-medium">English: {{data.alternative_titles.english}}</span>
+                <span class="block font-medium">Japanese: {{data.alternative_titles.japanese}}</span>
+            </div>
+            <div class="information mt-4 text-center">
+                <h2 class="text-3xl" style="font-family: 'Courgette' , cursive;">Information</h2>
+                <hr class="my-2 border-t border-slate-950">
+                <span class="block font-medium">Type: {{type}}</span>
+                <span class="block font-medium">Status: {{data.information.status}}</span>
+                <span class="block font-medium">Episodes: {{data.information.episodes}}</span>
+                <span class="block font-medium">Aired: {{data.information.aired}}</span>
+                <span class="block font-medium">Premiered: {{premiered}}</span>
+                <span class="block font-medium">Broadcast: {{data.information.broadcast}}</span>
+                <span class="block font-medium">Producers: {{producers}}</span>
+                <span class="block font-medium">Studios: {{studios}}</span>
+                <span class="block font-medium">Source: {{data.information.source}}</span>
+                <span class="block font-medium">Genres: {{genres}}</span>
+                <span class="block font-medium">Themes: {{themes}}</span>
+                <span class="block font-medium">Duration: {{data.information.duration}}</span>
+                <span class="block font-medium">Rating: {{data.information.rating}}</span>
+            </div>
+        </div>
+        <hr id="hr">
+        <div class="right md:w-3/4">
+            <div class="statistics mt-4 text-center">
+                <h2 class="text-3xl" style="font-family: 'Courgette' , cursive;">Statistics</h2>
+                <span class="block font-medium">Score: {{data.statistics.score}}</span>
+                <span class="block font-medium">Ranked: {{data.statistics.ranked}}th</span>
+                <span class="block font-medium">Popularity: {{data.statistics.popularity}}</span>
+                <span class="block font-medium">Members: {{data.statistics.members}}</span>
+                <hr class="my-2 border-t border-slate-950">
+            </div>
+            <div class="details mt-8 text-center mb-8">
+                <h2 class="text-3xl mb-4" style="font-family: 'Courgette' , cursive;">Synopsis</h2>
+                <div>{{data.synopsis}}</div>
+            </div>
+            <div class="recommendations mt-4 text-center">
+                <hr class="my-2 border-t border-slate-950">
+                <h2 class="text-3xl" style="font-family: 'Courgette' , cursive;">Recommendations</h2>
+                <div class="flex flex-wrap justify-center" id="contentContainer">
+                    <div class="bg-red-500 bg-opacity-90 lg:w-1/4 md:w-1/2 p-4 mt-2 mb-2 mr-2 ml-1 w-full rounded-lg">
+                        <a class="block relative h-60 rounded overflow-hidden flex justify-center align-items-center cursor-pointer"
+                            id="{{Recommendations0Id}}">
+                            <img alt="{{Recommendations0Name}}" class="object-cover object-center block h-max-content"
+                                src="{{Recommendations0Picture}}">
+                        </a>
+                        <div class="mt-9">
+                            <h2 class="text-gray-50 title-font text-3xl font-medium text-center break-words">
+                                {{Recommendations0Name}}</h2>
+                        </div>
+                    </div>
+                    <div class="bg-red-500 bg-opacity-90 lg:w-1/4 md:w-1/2 p-4 mt-2 mb-2 mr-2 ml-1 w-full rounded-lg">
+                        <a class="block relative h-60 rounded overflow-hidden flex justify-center align-items-center cursor-pointer"
+                            id="{{Recommendations1Id}}">
+                            <img alt="{{Recommendations1Name}}" class="object-cover object-center block h-max-content"
+                                src="{{Recommendations1Picture}}">
+                        </a>
+                        <div class="mt-9">
+                            <h2 class="text-gray-50 title-font text-3xl font-medium text-center break-words">
+                                {{Recommendations1Name}}</h2>
+                        </div>
+                    </div>
+                    <div class="bg-red-500 bg-opacity-90 lg:w-1/4 md:w-1/2 p-4 mt-2 mb-2 mr-2 ml-1 w-full rounded-lg">
+                        <a class="block relative h-60 rounded overflow-hidden flex justify-center align-items-center cursor-pointer"
+                            id="{{Recommendations2Id}}">
+                            <img alt="{{Recommendations2Name}}" class="object-cover object-center block h-max-content"
+                                src="{{Recommendations2Picture}}">
+                        </a>
+                        <div class="mt-9">
+                            <h2 class="text-gray-50 title-font text-3xl font-medium text-center break-words">
+                                {{Recommendations2Name}}</h2>
+                        </div>
+                    </div>
+                    <div class="bg-red-500 bg-opacity-90 lg:w-1/4 md:w-1/2 p-4 mt-2 mb-2 mr-2 ml-1 w-full rounded-lg">
+                        <a class="block relative h-60 rounded overflow-hidden flex justify-center align-items-center cursor-pointer"
+                            id="{{Recommendations3Id}}">
+                            <img alt="{{Recommendations3Name}}" class="object-cover object-center block h-max-content"
+                                src="{{Recommendations3Picture}}">
+                        </a>
+                        <div class="mt-9">
+                            <h2 class="text-gray-50 title-font text-3xl font-medium text-center break-words">
+                                {{Recommendations3Name}}</h2>
+                        </div>
+                    </div>
+                    <div class="bg-red-500 bg-opacity-90 lg:w-1/4 md:w-1/2 p-4 mt-2 mb-2 mr-2 ml-1 w-full rounded-lg">
+                        <a class="block relative h-60 rounded overflow-hidden flex justify-center align-items-center cursor-pointer"
+                            id="{{Recommendations4Id}}">
+                            <img alt="{{Recommendations4Name}}" class="object-cover object-center block h-max-content"
+                                src="{{Recommendations4Picture}}">
+                        </a>
+                        <div class="mt-9">
+                            <h2 class="text-gray-50 title-font text-3xl font-medium text-center break-words"
+                                id="re4Name">
+                                {{Recommendations4Name}}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{>footer}}
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const searchIcon = document.getElementById('searchIcon');
+        const warning = document.getElementById('warning');
+        const setItem = () => {
+            localStorage.setItem('searchValue', searchInput.value);
+        };
+        const setTimeOut = () => {
+            warning.classList.remove('hidden');
+            setTimeout(() => {
+                warning.classList.add('hidden');
+            }, 2000);
+        }
+        searchIcon.addEventListener('click', () => {
+            if (searchInput.value.length >= 3) setItem();
+            else setTimeOut();
+        })
+
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                if (searchInput.value.length >= 3) setItem();
+                else setTimeOut();
+            }
+        })
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                if (searchInput.value.length >= 3) window.location.href = '/search';
+                else setTimeOut();
+            }
+        })
+        searchIcon.addEventListener('click', () => {
+            if (searchInput.value.length >= 3) window.location.href = '/search';
+            else setTimeOut();
+        });
+        const anchorArr = Array.from(contentContainer.querySelectorAll('a'))
+        console.log(anchorArr);
+        anchorArr.forEach((element) => {
+            element.addEventListener('click', async (e) => {
+                const currentId = e.currentTarget.id;
+                console.log(e.currentTarget.id);
+                const response = await fetch(`http://localhost:3000/topanimes`, {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        id: currentId
+                    }),
+                })
+                const result = await response.json();
+                console.log(result);
+                window.location.reload();
+            })
+        });
+    </script>
+</body>
+
+</html>
